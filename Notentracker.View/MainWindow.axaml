@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="1250" Height="700"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="600" Background="#252525"
+        x:Class="Notentracker.View.MainWindow"
+        xmlns:views="clr-namespace:Notentracker.View"        
+        Title="Notentracker.View">
+        
+       <Grid Name="MainGrid">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Sidebar -->
+            <ColumnDefinition Width="*"/>
+            <!-- Hauptbereich -->
+            
+        </Grid.ColumnDefinitions>
+        <views:MenuView Grid.Column="0" x:Name="MenuView"/>
+        
+        <ContentControl x:Name="ContentArea" Grid.Column="1" />
+        </Grid>
+    
+</Window>

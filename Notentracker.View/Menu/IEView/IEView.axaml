@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Notentracker.View.Menu.IEView.IEView">
+    
+    <Grid>
+  <StackPanel Margin="20" Spacing="20">
+  
+    <TextBlock Text="📦 Import / Export" FontSize="24" FontWeight="Bold" />
+  
+    <!-- Subjects -->
+    <TextBlock Text="Fächer (subjects.json)" FontSize="16" />
+    <StackPanel Orientation="Horizontal" Spacing="10">
+      <Button Content="📥 Importieren" Click="OnImportSubjects"/>
+      <Button Content="📤 Exportieren" Click="OnExportSubjects"/>
+    </StackPanel>
+  
+    <!-- Grades -->
+    <TextBlock Text="Noten (grades.json)" FontSize="16" Margin="0,10,0,0"/>
+    <StackPanel Orientation="Horizontal" Spacing="10">
+      <Button Content="📥 Importieren" Click="OnImportGrades"/>
+      <Button Content="📤 Exportieren" Click="OnExportGrades"/>
+    </StackPanel>
+  
+    <!-- Events -->
+    <TextBlock Text="Termine (events.json)" FontSize="16" Margin="0,10,0,0"/>
+    <StackPanel Orientation="Horizontal" Spacing="10">
+      <Button Content="📥 Importieren" Click="OnImportEvents"/>
+      <Button Content="📤 Exportieren" Click="OnExportEvents"/>
+    </StackPanel>
+  
+  </StackPanel>
+  </Grid>
+
+</UserControl>

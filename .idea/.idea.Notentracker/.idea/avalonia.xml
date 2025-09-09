@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Notentracker.View/App.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Components/GradeChartView/GradeChartView.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Components/NotenChartView/NotenChartView.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/MainWindow.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Menu/DashboardView/DashboardView.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Menu/ExamView/ExamView.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Menu/GradeView/GradeView.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Menu/IEView/IEView.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Menu/MenuView.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Menu/NotenView/NotenView.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Menu/SubjectView/SubjectView.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+        <entry key="Notentracker.View/Styles/AppDefault.axaml" value="Notentracker.View/Notentracker.View.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,56 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    x:Class="Notentracker.View.MenuView"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid>
+
+            <StackPanel Background="#333" Margin="10">
+            
+                    <TextBlock 
+                               Text="Menü" 
+                               Foreground="White" 
+                               FontSize="22" 
+                               Margin="10" 
+                               VerticalAlignment="Top" 
+                               HorizontalAlignment="Center"
+                    />            
+                   
+                    <Button 
+                            Content="🏠 Dashboard" 
+                            Classes="main-menu-button"
+                            Click="Dashboard_Button_Click"
+                    />
+                    
+                    <Button 
+                            Content="📝 Noten" 
+                            Classes="main-menu-button"
+                            Click="Grade_Button_Click"
+                    />
+
+                    
+                    <Button 
+                            Content="📚 Fächer" 
+                            Classes="main-menu-button"
+                            Click="Subject_Button_Click"
+                    />
+
+                    <Button 
+                            Content="📅 Prüfungsplan" 
+                            Classes="main-menu-button"
+                            Click="Exam_Button_Click"
+                    />
+
+                    
+                    <Button 
+                            Content="📦 Import/Export" 
+                            Classes="main-menu-button"
+                            Click="IE_Button_Click"
+                    />
+                    
+            </StackPanel>
+    </Grid>
+
+
+
+</UserControl>

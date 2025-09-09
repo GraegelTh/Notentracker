@@ -1,0 +1,56 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:charts="clr-namespace:Notentracker.View.Components"
+    x:Class="Notentracker.View.Menu.DashboardView.DashboardView">
+
+  <StackPanel Margin="20" Spacing="20">
+    
+    <!-- Page Title -->
+    <TextBlock Text="🏠 Dashboard" FontSize="24" FontWeight="Bold"/>
+
+    
+    <TextBlock Text="{Binding NextExam}"
+               FontSize="16"
+               FontStyle="Italic"
+               Foreground="LightGray"/>
+    
+    <!-- Average of all Grades -->
+    <TextBlock Text="{Binding AverageText}"
+               FontSize="16"
+               FontWeight="Medium"
+               Foreground="LightGray"
+               Margin="0,5,0,0"/>
+
+    <!-- Average of last 5 Grades  -->
+    <StackPanel>
+      <TextBlock Text="📈 Aktueller Notenverlauf"
+                 FontSize="18"
+                 FontWeight="SemiBold"
+                 Margin="0,0,0,10"
+                 Foreground="White"/>
+
+      <!-- ChartView -->
+      <charts:GradeChartView Width="600" Height="300"/>
+    </StackPanel>
+
+    <!-- Upcoming Exams -->
+    <StackPanel>
+      <TextBlock Text="🗓️ Anstehende Termine"
+                 FontSize="18"
+                 FontWeight="SemiBold"
+                 Margin="0,20,0,10"
+                 Foreground="White"/>
+
+      <ItemsControl ItemsSource="{Binding Termine}">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding}" FontSize="14" Foreground="LightGray"/>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </StackPanel>
+
+  </StackPanel>
+
+</UserControl>

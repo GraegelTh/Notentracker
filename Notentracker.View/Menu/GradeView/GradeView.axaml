@@ -1,0 +1,108 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Notentracker.View.Menu.GradeView.GradeView">
+
+    <StackPanel Margin="20" Spacing="15">
+        <TextBlock Text="📝 Notenübersicht"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="White" />
+
+        <DockPanel LastChildFill="False" Margin="0,0,0,10">
+            
+            <StackPanel Orientation="Horizontal" Spacing="20">
+
+                <!-- Event selector -->
+                <StackPanel Width="250" Spacing="6">
+                    <TextBlock Text="Termin auswählen" FontSize="12" Foreground="LightGray"/>
+                    <ComboBox x:Name="EventComboBox"
+                              ItemsSource="{Binding Events}"
+                              SelectedItem="{Binding SelectedEvent}"
+                              Width="250"
+                              Height="36">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- Subject (readonly) -->
+                <StackPanel Margin="0,0,10,0" Width="150" Spacing="6">
+                    <TextBlock Text="Fach" Foreground="LightGray" FontSize="12"/>
+                    <TextBlock Text="{Binding SelectedSubjectName}" 
+                               Foreground="White" 
+                               FontSize="14"
+                               Height="36" 
+                               Padding="0,8,0,0"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Type (readonly) -->
+                <StackPanel Margin="0,0,10,0" Width="150" Spacing="6">
+                    <TextBlock Text="Typ" Foreground="LightGray" FontSize="12"/>
+                    <TextBlock Text="{Binding SelectedType}" 
+                               Foreground="White" 
+                               FontSize="14" 
+                               Height="36"
+                               Padding="0,8,0,0"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Grade -->
+                <StackPanel Width="100" Spacing="6">
+                    <TextBlock Text="Note" FontSize="12" Foreground="LightGray"/>
+                    <NumericUpDown x:Name="GradeInput"
+                                   Minimum="1"
+                                   Maximum="6"
+                                   Height="36"
+                                   FormatString="F0"
+                                   Value="1"/>
+                </StackPanel>
+
+                <!-- Add button -->
+                <StackPanel Width="150" Spacing="6">
+                    <TextBlock Text=" " Height="12"/>
+                    <Button Content="➕ Note hinzufügen"
+                            Click="OnAddGradeClick"
+                            Height="36"
+                            HorizontalAlignment="Stretch"/>
+                </StackPanel>
+
+            </StackPanel>
+
+        </DockPanel>
+
+        <!-- Grade List -->
+        <ListBox x:Name="GradeList"
+                 ItemsSource="{Binding Grades}"
+                 BorderThickness="0"
+                 Background="Transparent"
+                 VerticalAlignment="Stretch"
+                 Height="500">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="#333"
+                            CornerRadius="6"
+                            Padding="8"
+                            Margin="2">
+                        <StackPanel Orientation="Horizontal" Spacing="25" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Subject.Name}" Width="120" Foreground="White"/>
+                            <TextBlock Text="{Binding Value}" Width="40" Foreground="White"/>
+                            <TextBlock Text="{Binding Date, StringFormat=d}" Width="100" Foreground="White"/>
+                            <TextBlock Text="{Binding Type}" Width="140" Foreground="White"/>
+                            <Button Content="🗑️"
+                                    Background="#922"
+                                    Foreground="White"
+                                    Click="OnDeleteGradeClick"
+                                    Width="40"
+                                    Height="30"
+                                    Tag="{Binding}" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</UserControl>
